@@ -2,8 +2,7 @@ import card from './templates/card.hbs';
 import './sass/main.scss';
 import NewsApiService from './new-serviece'
 import LoadMoreBtn from './load-more-btn'
-
-
+ 
 fetch('https://pixabay.com/api/?image_type=photo&orientation=horizontal&page=1&per_page=12&key=22968189-f518494d66d88c5d71c698a06').then(r =>  r.json()).then(console.log());
    
 const refs = {
@@ -36,7 +35,10 @@ function onSearch(e) {
           loadMoreBtn.enable;
           
 })
-     loadMoreBtn.enable()
+     loadMoreBtn.enable();
+
+   
+     
 }
 
 function onLoadMore() {
@@ -65,3 +67,4 @@ refs.loadMoreBtn.scrollIntoView({
   behavior: 'smooth',
   block: 'end',
 });
+
