@@ -24,7 +24,7 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 let searchQuery = ''
 function onSearch(e) {
-
+     
      loadMoreBtn.disable()
      loadMoreBtn.show()
      e.preventDefault()
@@ -42,11 +42,13 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
+     
      loadMoreBtn.disable()
      newsApiServiece.fetchArtiecles().then(hits => {
-          hitsContainer(hits);
+          hitsContainer(hits)
           loadMoreBtn.enable()
-     } )
+          scroll()
+     })
 
    
 
@@ -62,9 +64,15 @@ function clearHitsContainer() {
      refs.artieclesContainer.innerHTML = ''
 }
 
-const element = document.getElementById('.my-element-selector');
-refs.loadMoreBtn.scrollIntoView({
-  behavior: 'smooth',
-  block: 'end',
-});
 
+ 
+function scroll() {
+     
+     refs.loadMoreBtn.scrollIntoView({
+          
+          behavior: 'smooth',
+       block: 'end',
+   
+     });
+     
+}
